@@ -1,0 +1,38 @@
+*ansible all -m gather_facts --limit 172.16.250.248 | grep asible_distribution
+
+*consolidate most of the plays into one
+
+*Check if installation is possible in the RHEL
+
+*Using pre_tasks
+----------------------
+---
+
+- hosts: all
+  become: true
+  pre-tasks:
+
+...
+----------------------
+
+*Using tags (adding metadata to plays)
+-----------------------
+---
+
+- hosts: db_server
+  become: true
+  tasks:
+
+  - name: install mariadb
+    tags: db,mariadb,centos
+    dnf:
+      name: mariadb
+      state: latest
+    when: ansible_distribution == "CentOS"
+-----------------------
+
+*To view the tags:
+  ansible-playbook --list-tags name-of-playbook.yml
+
+*To execute playbook utilizing tags
+  ansible-playbook --tags "db" --ask-become-pass site.yml
