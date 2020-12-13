@@ -2,7 +2,8 @@
 
 *consolidate most of the plays into one
 
-*Check if installation is possible in the RHEL
+*Check if installation is possible in the RHEL with yum module.
+ If it doesn't seem possible, try with command module or the shell module
 
 *Using pre_tasks
 ----------------------
