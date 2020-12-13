@@ -1,0 +1,4 @@
+* Ways to respond to prompts with shell script
+  E.g: Connect to a machine through ssh using shell script.
+       This is because a prior ssh connection is required for establish host key.
+       So to minimize the user interaction, a way to respond as 'yes' to ssh connection is required.
